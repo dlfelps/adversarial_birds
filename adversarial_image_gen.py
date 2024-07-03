@@ -42,7 +42,7 @@ class AdvImageGen():
 
     classifier = PyTorchClassifier(
         model=model,
-        clip_values=(-3, 3), # for normally distributed data, +-3 includes 99.7% of pixel values
+        clip_values=(-2, 2), # for normally distributed data, +-2 includes 95% of pixel values
         loss=criterion,
         optimizer=optimizer,
         input_shape=(3, 224, 224),
