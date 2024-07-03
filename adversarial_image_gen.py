@@ -29,7 +29,7 @@ class AdvImageGen():
   def __init__(self, model: torch.nn.Module, attack: EvasionAttack, dataset, undo_redo=True):
     self.model = self._wrapmodel(model)
     self.dataset = dataset
-    self.attack = attack
+    self.attack = attack(estimator=self.model, verbose=False)
     self.undo_redo = undo_redo
 
   def _wrapmodel(self, model):
